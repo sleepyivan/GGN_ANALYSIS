@@ -212,8 +212,10 @@ class Text_File_Processor:
             f.close()
         '''
 
-
+        # for each excel file
+        '''
         self.df.to_excel(output_direction + self.file_name + self.time + ".xlsx", index=False, encoding="utf16")
+        '''
         pass
 
 
@@ -230,7 +232,7 @@ for f_n in tqdm(f_ns):
         file = Text_File_Processor(f_n)
         file.open_file()
         file.organize_contents()
-        file.output_to_files()
+        # file.output_to_files()            # just need output to one final file
         total_df_list.append(file.df)
     except:
         error_info.append(f_n)
