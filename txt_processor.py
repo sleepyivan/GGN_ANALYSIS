@@ -196,6 +196,8 @@ class Text_File_Processor:
                 if not os.path.exists(diction):
                     os.makedirs(diction)
 
+        # for output each files into divided things uncomment it if necessary
+        '''
         for row_num in range(len(self.df_titles)):
             out_type = self.df_titles.TYPE[row_num]
             diction = direction_dict[out_type]
@@ -205,6 +207,8 @@ class Text_File_Processor:
             f = open(diction + file, "w", encoding="utf16")
             f.write(output_text)
             f.close()
+        '''
+
 
         self.df.to_excel(output_direction + self.file_name + self.time + ".xlsx", index=False, encoding="utf16")
         pass
