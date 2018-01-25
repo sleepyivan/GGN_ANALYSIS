@@ -185,6 +185,9 @@ class Text_File_Processor:
                 "__NETWORK": "data/mid_1_data/NETWORKING/",
                 "__By_PARTNER": "data/mid_1_data/ACTIVITY_BY_PARTNER/"
             }
+            for diction in list(direction_dict.values()):
+                if not os.path.exists(diction):
+                    os.makedirs(diction)
         else:
             direction_dict = {
                 "__BY_PARK": output_direction + "GEOPARK_ACTIVITY/",
